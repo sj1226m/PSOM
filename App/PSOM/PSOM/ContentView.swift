@@ -14,16 +14,59 @@ struct ContentView: View {
 #endif
     
     var body: some View {
-        TabView {
-            LectureView()
-                .tabItem {
-                    Text("Lecture")
-                }
-            LoginView()
-                .tabItem {
-                    Text("Login")
-                }
+        
+        NavigationView{
+            TabView(){
+                Text("Lecture")
+                    .tabItem{
+                        Image(systemName: "pencil.line")
+                        Text("Lecture")
+                            .tag(0)
+                    }
+                
+                Text("Quiz")
+                    .tabItem{
+                        Image(systemName: "questionmark.square.fill")
+                        Text("Quiz")
+                            .tag(1)
+                    }
+                
+                Text("Game")
+                    .tabItem{
+                        Image(systemName: "gamecontroller.fill")
+                        Text("Game")
+                            .tag(2)
+                    }
+                
+                Text("Lanking")
+                    .tabItem{
+                        Image(systemName: "number.square.fill")
+                        Text("Lanking")
+                            .tag(3)
+                    }
+                
+                Text("Profile")
+                    .tabItem{
+                        Image(systemName: "person.fill")
+                        Text("Profile")
+                            .tag(4)
+                    }
+            }
+            .onAppear(){
+                UITabBar.appearance().barTintColor = .white
+            }
         }
+        
+//        TabView {
+//            LectureView()
+//                .tabItem {
+//                    Text("Lecture")
+//                }
+//            LoginView()
+//                .tabItem {
+//                    Text("Login")
+//                }
+//        }
         .eraseToAnyView() // for hot reload injector
     }
 }

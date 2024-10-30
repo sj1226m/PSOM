@@ -14,6 +14,9 @@ struct LectureView: View {
 #endif
     
     var body: some View {
+        TabView{
+            
+        }
         VStack {
             RnText("Lecture View", fontSize:20)
         }
